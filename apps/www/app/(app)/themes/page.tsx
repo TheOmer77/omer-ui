@@ -1,6 +1,5 @@
 import { Metadata } from "next"
 
-import "public/registry/themes.css"
 import { Announcement } from "@/components/announcement"
 import {
   PageActions,
@@ -10,7 +9,10 @@ import {
 } from "@/components/page-header"
 import { ThemeCustomizer } from "@/components/theme-customizer"
 import { ThemeWrapper } from "@/components/theme-wrapper"
-import { ThemesTabs } from "@/app/(app)/themes/tabs"
+
+import "@/styles/themes.css"
+
+import { ThemesTabs } from "./tabs"
 
 export const metadata: Metadata = {
   title: "Themes",
