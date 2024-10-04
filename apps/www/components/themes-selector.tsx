@@ -43,9 +43,9 @@ export function ThemesSwitcher({
         {themes.map((theme) => (
           <div
             key={theme.id}
-            className="flex h-10 w-10 items-center justify-center rounded-lg border-2 border-transparent"
+            className="flex size-10 items-center justify-center rounded-lg border-2 border-transparent"
           >
-            <Skeleton className="h-6 w-6 rounded-sm" />
+            <Skeleton className="size-6 rounded-sm" />
           </div>
         ))}
       </div>
@@ -81,7 +81,7 @@ export function ThemesSwitcher({
               <ToggleGroupItem
                 value={theme.name}
                 className={cn(
-                  "group flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border-2 border-transparent p-0 hover:bg-transparent focus-visible:bg-transparent aria-checked:border-[--color-1]",
+                  "group flex size-10 shrink-0 items-center justify-center rounded-lg border-2 border-transparent p-0 hover:bg-transparent focus-visible:bg-transparent aria-checked:border-[--color-1]",
                   mounted && isDarkTheme && mode !== "dark" ? "invert-[1]" : ""
                 )}
                 style={
@@ -94,17 +94,17 @@ export function ThemesSwitcher({
                   } as React.CSSProperties
                 }
               >
-                <div className="h-6 w-6 overflow-hidden rounded-sm">
+                <div className="size-6 overflow-hidden rounded-sm">
                   <div
                     className={cn(
-                      "grid h-12 w-12 -translate-x-1/4 -translate-y-1/4 grid-cols-2 overflow-hidden rounded-md transition-all ease-in-out group-hover:rotate-45",
+                      "grid size-12 -translate-x-1/4 -translate-y-1/4 grid-cols-2 overflow-hidden rounded-md transition-all ease-in-out group-hover:rotate-45",
                       isActive ? "rotate-45 group-hover:rotate-0" : "rotate-0"
                     )}
                   >
-                    <span className="flex h-6 w-6 bg-[--color-1]" />
-                    <span className="flex h-6 w-6 bg-[--color-2]" />
-                    <span className="flex h-6 w-6 bg-[--color-3]" />
-                    <span className="flex h-6 w-6 bg-[--color-4]" />
+                    <span className="flex size-6 bg-[--color-1]" />
+                    <span className="flex size-6 bg-[--color-2]" />
+                    <span className="flex size-6 bg-[--color-3]" />
+                    <span className="flex size-6 bg-[--color-4]" />
                     <span className="sr-only">{theme.name}</span>
                   </div>
                 </div>
