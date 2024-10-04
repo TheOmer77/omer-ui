@@ -4,19 +4,15 @@
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { useMDXComponent } from "next-contentlayer2/hooks"
 import { NpmCommands } from "types/unist"
 
-import { Event } from "@/lib/events"
 import { cn } from "@/lib/utils"
-import { useConfig } from "@/hooks/use-config"
 import { Callout } from "@/components/callout"
 import { CodeBlockWrapper } from "@/components/code-block-wrapper"
 import { ComponentExample } from "@/components/component-example"
 import { ComponentPreview } from "@/components/component-preview"
 import { ComponentSource } from "@/components/component-source"
 import { CopyButton, CopyNpmCommandButton } from "@/components/copy-button"
-import { FrameworkDocs } from "@/components/framework-docs"
 import { StyleWrapper } from "@/components/style-wrapper"
 import {
   Accordion,
@@ -38,7 +34,7 @@ import {
 } from "@/registry/new-york/ui/tabs"
 import { Style } from "@/registry/registry-styles"
 
-const components = {
+export const mdxComponents = {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -176,15 +172,13 @@ const components = {
     __bunCommand__,
     __withMeta__,
     __src__,
-    __event__,
     __style__,
     ...props
   }: React.HTMLAttributes<HTMLPreElement> & {
-    __style__?: Style["name"]
-    __rawString__?: string
-    __withMeta__?: boolean
-    __src__?: string
-    __event__?: Event["name"]
+    __style__?: Style["name"];
+    __rawString__?: string;
+    __withMeta__?: boolean;
+    __src__?: string;
   } & NpmCommands) => {
     return (
       <StyleWrapper styleName={__style__}>
@@ -199,7 +193,6 @@ const components = {
           <CopyButton
             value={__rawString__}
             src={__src__}
-            event={__event__}
             className={cn("absolute right-4 top-4", __withMeta__ && "top-16")}
           />
         )}
@@ -292,12 +285,12 @@ const components = {
       {...props}
     />
   ),
-  FrameworkDocs: ({
+  /* FrameworkDocs: ({
     className,
     ...props
   }: React.ComponentProps<typeof FrameworkDocs>) => (
     <FrameworkDocs className={cn(className)} {...props} />
-  ),
+  ), */
   Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link
       className={cn("font-medium underline underline-offset-4", className)}
@@ -313,21 +306,4 @@ const components = {
       {...props}
     />
   ),
-}
-
-interface MdxProps {
-  code: string
-}
-
-export function Mdx({ code }: MdxProps) {
-  const [config] = useConfig()
-  const Component = useMDXComponent(code, {
-    style: config.style,
-  })
-
-  return (
-    <div className="mdx">
-      <Component components={components} />
-    </div>
-  )
-}
+};

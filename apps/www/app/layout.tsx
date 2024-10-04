@@ -1,7 +1,9 @@
 import "@/styles/globals.css"
 import { Metadata, Viewport } from "next"
 
-import { siteConfig } from "@/config/site"
+import { RootProvider } from 'fumadocs-ui/provider';
+
+import { Toaster as DefaultToaster } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { Analytics } from "@/components/analytics"
@@ -86,24 +88,26 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div vaul-drawer-wrapper="">
-              <div className="relative flex min-h-screen flex-col bg-background">
-                {children}
+          <RootProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <div vaul-drawer-wrapper="">
+                <div className="relative flex min-h-screen flex-col bg-background">
+                  {children}
+                </div>
               </div>
-            </div>
-            <TailwindIndicator />
-            <ThemeSwitcher />
-            <Analytics />
-            <NewYorkToaster />
-            <DefaultToaster />
-            <NewYorkSonner />
-          </ThemeProvider>
+              <TailwindIndicator />
+              <ThemeSwitcher />
+              <Analytics />
+              <NewYorkToaster />
+              <DefaultToaster />
+              <NewYorkSonner />
+            </ThemeProvider>
+          </RootProvider>
         </body>
       </html>
     </>

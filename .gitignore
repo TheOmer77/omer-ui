@@ -13,6 +13,9 @@ coverage
 out/
 build
 
+# fumadocs
+.source
+
 # misc
 .DS_Store
 *.pem

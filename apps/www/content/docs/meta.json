@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "---Getting Started---",
+    "index",
+    "installation/index",
+    "components-json",
+    "theming",
+    "dark-mode/index",
+    "cli",
+    "components/typography",
+    "v0",
+    "figma",
+    "changelog",
+    "---Installation---",
+    "...installation",
+    "---Components---",
+    "...components"
+  ]
+}

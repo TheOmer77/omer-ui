@@ -10,7 +10,8 @@
     "build:docs": "contentlayer2 build",
     "seed:tasks": "tsx --tsconfig ./tsconfig.scripts.json ./app/(app)/examples/tasks/data/seed.ts",
     "lint": "eslint --max-warnings=0 src && tsc --noEmit && prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
-    "format": "eslint --fix src && prettier --write \"**/*.{ts,tsx,mdx}\" --cache"
+    "format": "eslint --fix src && prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
+    "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
     "@faker-js/faker": "^9.0.3",

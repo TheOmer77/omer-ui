@@ -1,4 +1,4 @@
-import { createContentlayerPlugin } from "next-contentlayer2"
+import { createMDX } from 'fumadocs-mdx/next';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -57,8 +57,6 @@ const nextConfig = {
   },
 }
 
-const withContentlayer = createContentlayerPlugin({
-  // Additional Contentlayer config options
-})
+const withMDX = createMDX();
 
-export default withContentlayer(nextConfig)
+export default withMDX(nextConfig);
