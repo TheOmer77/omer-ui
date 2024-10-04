@@ -52,9 +52,9 @@ export function NavMain({
             <div className="relative flex items-center">
               <Link
                 href={item.url}
-                className="min-w-8 flex h-8 flex-1 items-center gap-2 overflow-hidden rounded-md px-1.5 text-sm font-medium outline-none ring-ring transition-all hover:bg-accent hover:text-accent-foreground focus-visible:ring-2"
+                className="flex h-8 min-w-8 flex-1 items-center gap-2 overflow-hidden rounded-md px-1.5 text-sm font-medium outline-none ring-ring transition-all hover:bg-accent hover:text-accent-foreground focus-visible:ring-2"
               >
-                <item.icon className="h-4 w-4 shrink-0" />
+                <item.icon className="size-4 shrink-0" />
                 <div className="flex flex-1 overflow-hidden">
                   <div className="line-clamp-1 pr-6">{item.title}</div>
                 </div>
@@ -62,9 +62,9 @@ export function NavMain({
               <CollapsibleTrigger asChild>
                 <Button
                   variant="ghost"
-                  className="absolute right-1 h-6 w-6 rounded-md p-0 ring-ring transition-all focus-visible:ring-2 data-[state=open]:rotate-90"
+                  className="absolute right-1 size-6 rounded-md p-0 ring-ring transition-all focus-visible:ring-2 data-[state=open]:rotate-90"
                 >
-                  <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                  <ChevronRight className="size-4 text-muted-foreground" />
                   <span className="sr-only">Toggle</span>
                 </Button>
               </CollapsibleTrigger>
@@ -75,7 +75,7 @@ export function NavMain({
                   <li key={subItem.title}>
                     <Link
                       href={subItem.url}
-                      className="min-w-8 flex h-8 items-center gap-2 overflow-hidden rounded-md px-2 text-sm font-medium text-muted-foreground ring-ring transition-all hover:bg-accent hover:text-accent-foreground focus-visible:ring-2"
+                      className="flex h-8 min-w-8 items-center gap-2 overflow-hidden rounded-md px-2 text-sm font-medium text-muted-foreground ring-ring transition-all hover:bg-accent hover:text-accent-foreground focus-visible:ring-2"
                     >
                       <div className="line-clamp-1">{subItem.title}</div>
                     </Link>
@@ -104,8 +104,8 @@ function SidebarSearch({
   if (isMobile) {
     return (
       <Drawer>
-        <DrawerTrigger className="min-w-8 flex h-8 w-full flex-1 items-center gap-2 overflow-hidden rounded-md px-1.5 text-sm font-medium outline-none ring-ring transition-all hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground">
-          <Search className="h-4 w-4 shrink-0" />
+        <DrawerTrigger className="flex h-8 w-full min-w-8 flex-1 items-center gap-2 overflow-hidden rounded-md px-1.5 text-sm font-medium outline-none ring-ring transition-all hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground">
+          <Search className="size-4 shrink-0" />
           <div className="flex flex-1 overflow-hidden">
             <div className="line-clamp-1 pr-6">Search</div>
           </div>
@@ -148,8 +148,8 @@ function SidebarSearch({
 
   return (
     <Popover>
-      <PopoverTrigger className="min-w-8 flex h-8 w-full flex-1 items-center gap-2 overflow-hidden rounded-md px-1.5 text-sm font-medium outline-none ring-ring transition-all hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground">
-        <Search className="h-4 w-4 shrink-0" />
+      <PopoverTrigger className="flex h-8 w-full min-w-8 flex-1 items-center gap-2 overflow-hidden rounded-md px-1.5 text-sm font-medium outline-none ring-ring transition-all hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground">
+        <Search className="size-4 shrink-0" />
         <div className="flex flex-1 overflow-hidden">
           <div className="line-clamp-1 pr-6">Search</div>
         </div>

@@ -37,11 +37,11 @@ export default function Component() {
             { name: "Desktop", value: 186, fill: "hsl(var(--chart-1))" },
             { name: "Mobile", value: 80, fill: "hsl(var(--chart-2))" },
           ]}
-          className="w-[8rem]"
+          className="w-32"
         />
       </div>
       <div className="items-end">
-        <div className="absolute left-[122px] top-[0px] z-10 text-sm font-medium">
+        <div className="absolute left-[122px] top-0 z-10 text-sm font-medium">
           Name
         </div>
         <svg
@@ -72,7 +72,7 @@ export default function Component() {
             { name: "Firefox", value: 1000, fill: "hsl(var(--chart-4))" },
           ]}
           indicator="dashed"
-          className="w-[8rem]"
+          className="w-32"
         />
       </div>
       <div className="!hidden md:!flex">
@@ -81,7 +81,7 @@ export default function Component() {
           payload={[
             { name: "Desktop", value: 12486, fill: "hsl(var(--chart-3))" },
           ]}
-          className="w-[9rem]"
+          className="w-36"
           indicator="line"
         />
       </div>
@@ -96,7 +96,7 @@ export default function Component() {
             { name: "Chrome", value: 1286, fill: "hsl(var(--chart-1))" },
           ]}
           indicator="dot"
-          className="w-[8rem]"
+          className="w-32"
         />
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -156,7 +156,7 @@ function TooltipDemo({
   return (
     <div
       className={cn(
-        "grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl transition-all ease-in-out hover:-translate-y-0.5",
+        "grid min-w-32 items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl transition-all ease-in-out hover:-translate-y-0.5",
         className
       )}
     >
@@ -169,7 +169,7 @@ function TooltipDemo({
             <div
               key={index}
               className={cn(
-                "flex w-full items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground",
+                "flex w-full items-stretch gap-2 [&>svg]:size-2.5 [&>svg]:text-muted-foreground",
                 indicator === "dot" && "items-center"
               )}
             >
