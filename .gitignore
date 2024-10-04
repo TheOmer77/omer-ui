@@ -12,6 +12,7 @@ coverage
 .next/
 out/
 build
+tsconfig.tsbuildinfo
 
 # fumadocs
 .source
@@ -35,8 +36,6 @@ yarn-error.log*
 # turbo
 .turbo
 
-.contentlayer
-tsconfig.tsbuildinfo
 
 # ide
 .idea

@@ -2,6 +2,6 @@ dist
 node_modules
 .next
 build
-.contentlayer
+.source
 apps/www/pages/api/registry.json
 **/fixtures
