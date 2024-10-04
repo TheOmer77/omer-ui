@@ -6,8 +6,8 @@
   "type": "module",
   "packageManager": "pnpm@9.12.0",
   "author": {
-    "name": "shadcn",
-    "url": "https://twitter.com/shadcn"
+    "name": "TheOmer77",
+    "url": "https://github.com/TheOmer77"
   },
   "scripts": {
     "build": "turbo run build",
