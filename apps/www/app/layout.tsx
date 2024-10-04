@@ -3,7 +3,7 @@ import { Metadata, Viewport } from "next"
 
 import { RootProvider } from 'fumadocs-ui/provider';
 
-import { Toaster as DefaultToaster } from "@/config/site"
+import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { Analytics } from "@/components/analytics"
