@@ -7,12 +7,21 @@ export function SiteFooter() {
         <p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
           Built by{" "}
           <a
-            href={siteConfig.links.twitter}
+            href={siteConfig.links.me}
             target="_blank"
             rel="noreferrer"
             className="font-medium underline underline-offset-4"
           >
-            shadcn
+            Omer
+          </a>
+          , based on{" "}
+          <a
+            href={siteConfig.links.shadcn}
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium underline underline-offset-4"
+          >
+            shadcn/ui
           </a>
           . The source code is available on{" "}
           <a
