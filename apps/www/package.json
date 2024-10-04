@@ -7,7 +7,6 @@
     "dev": "next dev -p 3333",
     "build": "pnpm build:docs && pnpm build:registry && next build",
     "build:registry": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts && prettier --loglevel silent --write \"registry/**/*.{ts,tsx,mdx}\" --cache",
-    "build:docs": "contentlayer2 build",
     "seed:tasks": "tsx --tsconfig ./tsconfig.scripts.json ./app/(app)/examples/tasks/data/seed.ts",
     "lint": "eslint --max-warnings=0 . && tsc --noEmit && prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
     "format": "eslint --fix . && prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
