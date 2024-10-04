@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ChevronRightIcon, ExternalLinkIcon } from '@radix-ui/react-icons';
-import defaultMdxComponents from 'fumadocs-ui/mdx';
 import Balancer from 'react-wrap-balancer';
 
 import { badgeVariants } from '@/registry/new-york/ui/badge';
@@ -75,7 +74,7 @@ export default async function Page({
           ) : null}
         </div>
         <div className='pb-12 pt-8'>
-          <MDXBody components={{ ...defaultMdxComponents, ...mdxComponents }} />
+          <MDXBody components={mdxComponents} />
         </div>
       </main>
 
