@@ -13,9 +13,9 @@
     "dev": "turbo dev --parallel",
     "dev:www": "turbo -F www dev",
     "build": "turbo build",
-    "build:registry": "turbo -F www build:registry format",
+    "build:registry": "pnpm -F www build:registry && pnpm -F www format",
     "build:www": "turbo -F www build",
-    "build:docs": "turbo -F www build:docs",
+    "build:docs": "pnpm -F www build:docs",
     "lint": "turbo lint",
     "preview": "turbo preview",
     "format": "turbo format"
