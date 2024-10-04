@@ -6,3 +6,5 @@ export const source = loader({
   baseUrl: '/docs',
   source: createMDXSource(docs, meta),
 });
+
+export type Doc = (typeof docs)[0];
