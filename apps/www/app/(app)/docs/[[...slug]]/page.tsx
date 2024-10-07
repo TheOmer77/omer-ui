@@ -8,12 +8,53 @@ import { DocLinks } from '@/components/doc-links';
 import { mdxComponents } from '@/components/mdx-components';
 import { DashboardTableOfContents } from '@/components/toc';
 import { source } from '@/lib/source';
+import { absoluteUrl } from '@/lib/utils';
+import { siteConfig } from '@/config/site';
 
-export default async function Page({
+interface DocPageProps {
+  params: {
+    slug: string[];
+  };
+}
+
+export async function generateMetadata({
   params,
-}: {
-  params: { slug?: string[] };
-}) {
+}: DocPageProps): Promise<Metadata> {
+  const page = source.getPage(params.slug);
+  if (!page) return {};
+
+  return {
+    title: page.data.title,
+    description: page.data.description,
+    openGraph: {
+      title: page.data.title,
+      description: page.data.description,
+      type: 'article',
+      url: absoluteUrl(page.url),
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: siteConfig.name,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: page.data.title,
+      description: page.data.description,
+      images: [siteConfig.ogImage],
+      creator: '@shadcn',
+    },
+  };
+}
+
+export async function generateStaticParams() {
+  return source.generateParams();
+}
+
+export default async function DocPage({ params }: DocPageProps) {
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
@@ -41,18 +82,4 @@ export default async function Page({
       </div>
     </div>
   );
-}
-
-export async function generateStaticParams() {
-  return source.generateParams();
-}
-
-export function generateMetadata({ params }: { params: { slug?: string[] } }) {
-  const page = source.getPage(params.slug);
-
-  if (!page) notFound();
-
-  return {
-    title: page.data.title,
-  } satisfies Metadata;
 }
