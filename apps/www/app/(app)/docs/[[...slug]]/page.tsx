@@ -61,17 +61,14 @@ export default async function DocPage({ params }: DocPageProps) {
   const { title, description, links, toc, body: MDXBody } = page.data;
 
   return (
-    <div className='relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]'>
-      <main>
-        <div className='mx-auto w-full min-w-0'>
-          <DocBreadcrumb title={title} />
-          <DocHeader title={title} description={description} />
-          <DocLinks links={links} />
-        </div>
-        <div className='pb-12 pt-8'>
-          <MDXBody components={mdxComponents} />
-        </div>
-      </main>
+    <main className='relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]'>
+      <div className='mx-auto w-full min-w-0'>
+        <DocBreadcrumb title={title} />
+        <DocHeader title={title} description={description} />
+        <DocLinks links={links} />
+        <MDXBody components={mdxComponents} />
+        {/* TODO: Bring back Pager */}
+      </div>
 
       <div className='hidden text-sm xl:block'>
         <div className='sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] pt-4'>
@@ -80,6 +77,6 @@ export default async function DocPage({ params }: DocPageProps) {
           </ScrollArea>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
