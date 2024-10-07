@@ -66,7 +66,9 @@ export default async function DocPage({ params }: DocPageProps) {
         <DocBreadcrumb title={title} />
         <DocHeader title={title} description={description} />
         <DocLinks links={links} />
-        <MDXBody components={mdxComponents} />
+        <div className='pb-12 pt-8'>
+          <MDXBody components={mdxComponents} />
+        </div>
         {/* TODO: Bring back Pager */}
       </div>
 
