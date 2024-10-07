@@ -6,6 +6,7 @@ import { DocBreadcrumb } from '@/components/doc-breadcrumb';
 import { DocHeader } from '@/components/doc-header';
 import { DocLinks } from '@/components/doc-links';
 import { mdxComponents } from '@/components/mdx-components';
+import { DocsPager } from '@/components/pager';
 import { DashboardTableOfContents } from '@/components/toc';
 import { source } from '@/lib/source';
 import { absoluteUrl } from '@/lib/utils';
@@ -69,7 +70,7 @@ export default async function DocPage({ params }: DocPageProps) {
         <div className='pb-12 pt-8'>
           <MDXBody components={mdxComponents} />
         </div>
-        {/* TODO: Bring back Pager */}
+        <DocsPager url={page.url} />
       </div>
 
       <div className='hidden text-sm xl:block'>
